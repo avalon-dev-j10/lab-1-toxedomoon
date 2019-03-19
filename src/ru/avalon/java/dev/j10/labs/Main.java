@@ -40,7 +40,7 @@ public class Main {
         System.out.println(fullNameSmith); 
         System.out.println(ivanov.getAdress()); 
         System.out.println(smith.getAdress()); 
-        /*
+        /* 
          * TODO(Студент): Создайте несколько строковых переменных:
          *
          * 1. Строковую переменную, содержащую полное имя
