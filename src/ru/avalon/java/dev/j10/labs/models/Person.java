@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Adress;
+
 /**
  * Представление о человеке.
  * <p>
@@ -13,6 +15,17 @@ package ru.avalon.java.dev.j10.labs.models;
  */
 public class Person {
 
+    
+    String fullName;
+    Adress adress;
+    Passport passport;
+
+    public Person(Passport passport, Adress adress) {
+        this.passport = passport;
+        this.adress = adress;
+    }
+    
+    
     /*
      * TODO(Студент): Создайте класс Address.
      *
@@ -50,9 +63,22 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        if (passport.getSecondname() != null ) {
+            return passport.getName() + " " + passport.getSecondname().charAt(0) + ". " + passport.getSurname();
+        } 
+        
+        else if (passport.getSecondname() == null && passport.getPatronymic() == null) {
+            return passport.getName() + " " + passport.getSurname();
+        }
+        else {
+        return 
+                  passport.getName () 
+                + " " 
+                + passport.getSurname () 
+                + " " 
+                + passport.getPatronymic ();
+        }
     }
-
     /**
      * Возвращает адрес, по которому проживает человек.
      * <p>
@@ -61,10 +87,21 @@ public class Person {
      *
      * @return адрес регистрации в виде строки.
      */
-    public String getAddress() {
+    public String getAdress() {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        return 
+                adress.getPostcode () 
+                + " " 
+                + adress.getCountry () 
+                + " " 
+                + adress.getCity () 
+                + " " 
+                + adress.getStreet () 
+                + " " 
+                + adress.getHouse ()
+                + " " 
+                + adress.getFlat ();
     }
 }
