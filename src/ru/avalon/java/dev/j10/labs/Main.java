@@ -1,6 +1,7 @@
 package ru.avalon.java.dev.j10.labs;
 
-import ru.avalon.java.dev.j10.labs.models.Person;
+import ru.avalon.java.dev.j10.labs.models.*;
+import ru.avalon.java.dev.j10.labs.commons.Adress;
 
 public class Main {
 
@@ -9,9 +10,17 @@ public class Main {
         /*
          * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
          */
+        Passport passportIvanov = new Passport ("Иван", "Иванов");
+        passportIvanov.setPatronymic ("Иванович");
+        
+        Passport passportSmith = new Passport("John", "Smith");
+        passportSmith.setSecondname("Edvard");
 
-        Person ivanov = new Person();
-        Person smith = new Person();
+        Adress adressIvanov = new Adress(196411, "Россия", "Санкт-Петербург", "Заставская", 32, 29);
+        Adress adressSmith = new Adress(945899, "USA", "Oceanside", "Crouch St.", 17, 5);
+        
+        Person ivanov = new Person(passportIvanov, adressIvanov);
+        Person smith = new Person(passportSmith, adressSmith);
 
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
@@ -27,7 +36,11 @@ public class Main {
         String fullNameIvanov = ivanov.getFullName();
         String fullNameSmith = smith.getFullName();
         
-        /*
+        System.out.println(fullNameIvanov); 
+        System.out.println(fullNameSmith); 
+        System.out.println(ivanov.getAdress()); 
+        System.out.println(smith.getAdress()); 
+        /* 
          * TODO(Студент): Создайте несколько строковых переменных:
          *
          * 1. Строковую переменную, содержащую полное имя
